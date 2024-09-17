@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataConstruct_And_Algorithm")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b05272471ea7f7372f69f238fab21f9a75e22fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataConstruct_And_Algorithm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataConstruct_And_Algorithm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

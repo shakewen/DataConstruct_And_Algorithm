@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,11 @@ namespace DataConstruct_And_Algorithm
         {
             head = null;
         }
-        public T this[int index] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
 
-        public int Count => throw new NotImplementedException();
+        
 
-        public bool IsReadOnly => throw new NotImplementedException();
+       
 
         public void Add(T item)
         {
@@ -54,28 +55,23 @@ namespace DataConstruct_And_Algorithm
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            head = null;
         }
 
-        public bool Contains(T item)
+        public T this[int index]
         {
-            throw new NotImplementedException();
+            get
+            {
+                Node<T> temp = head;
+                for (int i = 0; i < index; i++)
+                {
+                    temp = temp.Next;
+                }
+                return temp.Data;
+            }
         }
 
-        public void CopyTo(T[] array, int arrayIndex)
-        {
-            throw new NotImplementedException();
-        }
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int IndexOf(T item)
-        {
-            throw new NotImplementedException();
-        }
 
         //插入节点
         public void Insert(int index, T item)
@@ -93,7 +89,7 @@ namespace DataConstruct_And_Algorithm
             {
                 //从头节点开始遍历，找到要插入的位置
                Node<T> temp = head;
-                for(int i = 0; i <= index-1; i++)
+                for(int i = 0; i < index-1; i++)
                 {
                     //让temp向后移一个位置,直到找到要插入的位置
                     temp = temp.Next;
@@ -109,9 +105,88 @@ namespace DataConstruct_And_Algorithm
 
         public T Delete(int index)
         {
+            T data =default(T);
+            
+            if (index == 0)
+            {
+                data = head.Data;
+                //重新给定头节点为下个节点
+                head = head.Next;
 
+            }
+            else
+            {
+                Node<T> temp = head;
+                //temp向后移动一个位置
+                for(int i = 0; i < index-1; i++)
+                {
+                    temp = temp.Next;
+                    
+                }
+                Node<T> preNode = temp;
+                Node<T> currentNode = temp.Next;
+                data = currentNode.Data;
+                Node<T> nextNode = temp.Next.Next;
+                preNode.Next = nextNode;
+            }
+
+            return data;
         }
 
+
+        public int GetLength()
+        {
+            if (head == null) return 0;
+            
+                Node<T> temp = head;
+                int count = 1;
+                while (true)
+                {
+                    if (temp.Next != null)
+                    {
+                        count++;
+                        temp = temp.Next;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                return count;
+            
+        }
        
+        public int Locate(T item)
+        {
+            Node<T> temp = head;
+            if(temp == null)
+            {
+                return -1;
+            }
+            else
+            {
+                int index = 0;
+                while (true)
+                {
+                    if (temp.Data!=null&&temp.Data.Equals(item))
+                    {
+                        return index;
+                    }
+                    else
+                    {
+                        if (temp.Next != null)
+                        {
+                            index++;
+                            temp = temp.Next;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+                return -1;
+            }
+        }
     }
 }
