@@ -12,4 +12,3 @@ E:\VisualStudio2022\VSProjects\DataConstruct_And_Algorithm\obj\Debug\net8.0\refi
 E:\VisualStudio2022\VSProjects\DataConstruct_And_Algorithm\obj\Debug\net8.0\DataConstruct_And_Algorithm.pdb
 E:\VisualStudio2022\VSProjects\DataConstruct_And_Algorithm\obj\Debug\net8.0\DataConstruct_And_Algorithm.genruntimeconfig.cache
 E:\VisualStudio2022\VSProjects\DataConstruct_And_Algorithm\obj\Debug\net8.0\ref\DataConstruct_And_Algorithm.dll
-E:\VisualStudio2022\VSProjects\DataConstruct_And_Algorithm\obj\Debug\net8.0\DataConstruct_And_Algorithm.sourcelink.json
