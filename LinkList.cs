@@ -112,7 +112,40 @@ namespace DataConstruct_And_Algorithm
             }
         }
 
-      
+        public int locate(T item)
+        {
+            Node<T> temp = head;
+            if(head == null)
+            {
+                return -1;
+            }
+            else
+            {
+                int index = 0;
+                while(temp != null)
+                {
+                    if(temp.Data!= null && temp.Data.Equals(item))
+                    {
+                        return index;
+                    }
+                    else
+                    {
+                        if(temp.Next != null)
+                        {
+                            temp = temp.Next;
+                            index++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    
+                }
+                return -1;
+            }
+            
+        }
 
        
     }
