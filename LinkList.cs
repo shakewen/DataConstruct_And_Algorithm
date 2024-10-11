@@ -57,6 +57,11 @@ namespace DataConstruct_And_Algorithm
             throw new NotImplementedException();
         }
 
+        public bool isEmpty()
+        {
+            return head == null;
+        }
+
         public bool Contains(T item)
         {
             throw new NotImplementedException();
@@ -107,10 +112,7 @@ namespace DataConstruct_And_Algorithm
             }
         }
 
-        public T Delete(int index)
-        {
-
-        }
+      
 
        
     }
